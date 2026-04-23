@@ -10,8 +10,7 @@
 - 🔒 支持密码保护
 - ⏰ 支持链接有效期设置
 - 🔢 支持访问次数限制
-- 🤖 集成 Cloudflare Turnstile 人机验证
-- 🎨 简洁美观的用户界面
+- 🎨 黑白极简风格界面
 - ✨ 支持自定义短链接
 
 ## 部署步骤
@@ -30,16 +29,6 @@
 ![image](https://github.com/user-attachments/assets/68db428a-c3af-42f7-90fc-43ba91f9cc7b)
 
 复制本项目中的[index.js](/index.js)的代码到Cloudflare Worker 点击保存并部署
-
-### 2. 配置 Turnstile
-
-启用人机验证:
-
-1. 在 [Cloudflare Dashboard](https://dash.cloudflare.com/?to=/:account/turnstile) 创建新的 Turnstile site key
-2. 获取 site key 和 secret key
-3. 在 Workers 设置中添加环境变量:
-   - `TURNSTILE_SITE_KEY`: 你的 site key
-   - `TURNSTILE_SECRET`: 你的 secret key
 
 ## 预览图
 
