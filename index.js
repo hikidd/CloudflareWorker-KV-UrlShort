@@ -39,24 +39,24 @@ async function serveFrontend() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>短链接生成器</title>
+    <title>U链接</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
 </head>
 <body class="min-h-screen bg-gray-50 text-gray-900">
-    <main class="mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-4 py-10 sm:px-6 lg:px-8">
-        <div class="mx-auto mb-8 w-full max-w-5xl">
-            <div class="mt-6 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-                <div class="max-w-2xl">
-                    <h1 class="text-4xl font-semibold tracking-tight text-black sm:text-5xl">U短链</h1>
-                    <p class="mt-3 text-sm leading-6 text-gray-600 sm:text-base">
+    <main class="mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-4 py-6 sm:px-5 sm:py-8 lg:px-8">
+        <div class="mx-auto mb-6 w-full max-w-4xl">
+            <div class="mt-4 flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
+                <div class="max-w-xl">
+                    <h1 class="text-3xl font-semibold tracking-tight text-black sm:text-4xl">U短链</h1>
+                    <p class="mt-2 text-sm leading-6 text-gray-600 sm:text-base">
                         更轻、更快、更克制，把长链接整理成干净好用的分享入口。
                     </p>
                 </div>
                 <a href="https://github.com/hikidd/CloudflareWorker-KV-UrlShort"
                    target="_blank"
                    rel="noreferrer"
-                   class="inline-flex items-center justify-center rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 transition hover:bg-gray-100">
+                   class="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm font-medium text-gray-700 transition hover:bg-gray-100">
                     <svg class="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
                     </svg>
@@ -65,34 +65,34 @@ async function serveFrontend() {
             </div>
         </div>
 
-        <div class="mx-auto grid w-full max-w-5xl gap-4 lg:grid-cols-3">
-            <section class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8 lg:col-span-2">
-                <div class="mb-6 flex flex-col gap-4 border-b border-gray-100 pb-6 sm:flex-row sm:items-center sm:justify-between">
+        <div class="mx-auto grid w-full max-w-4xl gap-3 lg:grid-cols-3">
+            <section class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6 lg:col-span-2">
+                <div class="mb-4 flex flex-col gap-3 border-b border-gray-100 pb-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <p class="text-sm font-semibold text-gray-900">创建短链接</p>
                         <p class="mt-1 text-sm text-gray-500">输入目标地址，可选设置自定义后缀、有效期、密码和访问次数。</p>
                     </div>
                 </div>
 
-                <form id="shorten-form" class="space-y-5">
+                <form id="shorten-form" class="space-y-4">
                     <div>
                         <label for="url" class="mb-2 block text-sm font-medium text-gray-700">
                             输入链接
                             <span class="font-normal text-gray-400">（必填）</span>
                         </label>
                         <input id="url" type="url"
-                            class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                            class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
                             placeholder="https://example.com" required>
                     </div>
 
-                    <div class="grid gap-4 sm:grid-cols-2">
+                    <div class="grid gap-3 sm:grid-cols-2">
                         <div>
                             <label for="slug" class="mb-2 block text-sm font-medium text-gray-700">
                                 自定义短链接
                                 <span class="font-normal text-gray-400">（可选）</span>
                             </label>
                             <input id="slug" type="text"
-                                class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                                class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
                                 placeholder="自定义链接">
                         </div>
                         <div>
@@ -101,7 +101,7 @@ async function serveFrontend() {
                                 <span class="font-normal text-gray-400">（可选）</span>
                             </label>
                             <select id="expiry"
-                                class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                                class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200">
                                 <option value="">永久有效</option>
                                 <option value="1h">1小时</option>
                                 <option value="24h">24小时</option>
@@ -110,18 +110,18 @@ async function serveFrontend() {
                                 <option value="custom">自定义时间</option>
                             </select>
                             <input id="customExpiry" type="datetime-local"
-                                class="mt-2 hidden w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                                class="mt-2 hidden w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200">
                         </div>
                     </div>
 
-                    <div class="grid gap-4 sm:grid-cols-2">
+                    <div class="grid gap-3 sm:grid-cols-2">
                         <div>
                             <label for="password" class="mb-2 block text-sm font-medium text-gray-700">
                                 访问密码
                                 <span class="font-normal text-gray-400">（可选）</span>
                             </label>
                             <input id="password" type="password"
-                                class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                                class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
                                 placeholder="设置密码">
                         </div>
                         <div>
@@ -130,33 +130,33 @@ async function serveFrontend() {
                                 <span class="font-normal text-gray-400">（可选）</span>
                             </label>
                             <input id="maxVisits" type="number"
-                                class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                                class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200"
                                 placeholder="10">
                         </div>
                     </div>
 
                     <button type="submit"
-                        class="w-full rounded-xl bg-gray-900 px-4 py-3 text-sm font-medium text-white transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
+                        class="w-full rounded-lg bg-gray-900 px-3 py-2.5 text-sm font-medium text-white transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
                         生成短链接
                     </button>
                 </form>
 
-                <div id="result" class="mt-6"></div>
+                <div id="result" class="mt-4"></div>
             </section>
 
             <aside class="space-y-4">
-                <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+                <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
                     <p class="text-xs font-semibold uppercase tracking-widest text-gray-500">真相只有一个</p>
-                    <h2 class="mt-3 text-lg font-semibold text-gray-900">再复杂的链接，也能一键化繁为简</h2>
+                    <h2 class="mt-2 text-base font-semibold text-gray-900">再复杂的链接，也能一键化繁为简</h2>
                     <p class="mt-2 text-sm leading-6 text-gray-600">保留单文件结构，不新增依赖、不需要构建，直接粘贴到 Cloudflare Worker 后台测试。</p>
                 </div>
-                <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+                <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
                     <p class="text-xs font-semibold uppercase tracking-widest text-gray-500">支持能力</p>
-                    <div class="mt-4 grid grid-cols-2 gap-2 text-sm text-gray-700">
-                        <div class="rounded-xl border border-gray-200 bg-gray-50 px-3 py-3">密码保护</div>
-                        <div class="rounded-xl border border-gray-200 bg-gray-50 px-3 py-3">有效期</div>
-                        <div class="rounded-xl border border-gray-200 bg-gray-50 px-3 py-3">访问限制</div>
-                        <div class="rounded-xl border border-gray-200 bg-gray-50 px-3 py-3">自定义短链</div>
+                    <div class="mt-3 grid grid-cols-2 gap-2 text-sm text-gray-700">
+                        <div class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5">密码保护</div>
+                        <div class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5">有效期</div>
+                        <div class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5">访问限制</div>
+                        <div class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5">自定义短链</div>
                     </div>
                 </div>
             </aside>
@@ -234,14 +234,14 @@ async function serveFrontend() {
 
         if (response.ok) {
           resultDiv.innerHTML = \`
-            <div class="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
+            <div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
               <p class="text-sm font-semibold text-gray-900">短链接生成成功</p>
               <p class="mt-1 text-sm text-gray-500">复制后即可直接分享。</p>
-              <div class="mt-4 flex flex-col gap-2 sm:flex-row">
+              <div class="mt-3 flex flex-col gap-2 sm:flex-row">
                 <input type="text" value="\${data.shortened}" readonly
-                  class="w-full flex-1 rounded-xl border border-gray-300 bg-gray-50 px-4 py-3 text-sm text-gray-900 focus:outline-none">
+                  class="w-full flex-1 rounded-lg border border-gray-300 bg-gray-50 px-3 py-2.5 text-sm text-gray-900 focus:outline-none">
                 <button onclick="copyToClipboard(this, '\${data.shortened}')"
-                  class="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-gray-900 px-4 py-3 text-sm font-medium text-white transition hover:bg-black">
+                  class="inline-flex items-center justify-center whitespace-nowrap rounded-lg bg-gray-900 px-3 py-2.5 text-sm font-medium text-white transition hover:bg-black">
                   复制链接
                 </button>
               </div>
@@ -268,7 +268,7 @@ async function serveFrontend() {
     });
 
     function renderError(resultDiv, message) {
-      resultDiv.innerHTML = '<div class="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm"><p class="text-sm font-medium text-gray-700"></p></div>';
+      resultDiv.innerHTML = '<div class="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"><p class="text-sm font-medium text-gray-700"></p></div>';
       resultDiv.querySelector('p').textContent = message;
     }
 
@@ -567,21 +567,21 @@ async function handleRedirect(pathname) {
       <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
       </head>
       <body class="min-h-screen bg-gray-50 text-gray-900">
-        <main class="mx-auto flex min-h-screen max-w-md items-center px-4 py-10">
-          <section class="w-full rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
-            <div class="mb-6 border-b border-gray-100 pb-6">
+        <main class="mx-auto flex min-h-screen max-w-md items-center px-4 py-6 sm:py-8">
+          <section class="w-full rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6">
+            <div class="mb-4 border-b border-gray-100 pb-4">
               <div class="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium uppercase tracking-widest text-gray-500">
                 Protected Link
               </div>
-              <h1 class="mt-4 text-2xl font-semibold text-gray-900">密码保护链接</h1>
+              <h1 class="mt-3 text-xl font-semibold text-gray-900">密码保护链接</h1>
               <p class="mt-2 text-sm leading-6 text-gray-600">输入访问密码后继续跳转到目标地址。</p>
             </div>
             <form id="password-form" class="space-y-4">
               <div>
                 <label for="password" class="mb-2 block text-sm font-medium text-gray-700">请输入访问码</label>
-                <input id="password" type="password" class="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200" required>
+                <input id="password" type="password" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 placeholder-gray-400 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200" required>
               </div>
-              <button type="submit" class="w-full rounded-xl bg-gray-900 px-4 py-3 text-sm font-medium text-white transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
+              <button type="submit" class="w-full rounded-lg bg-gray-900 px-3 py-2.5 text-sm font-medium text-white transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
                 访问链接
               </button>
             </form>
@@ -626,7 +626,7 @@ async function handleRedirect(pathname) {
           });
 
           function renderPasswordError(errorDiv, message) {
-            errorDiv.innerHTML = '<div class="rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-700"></div>';
+            errorDiv.innerHTML = '<div class="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm text-gray-700"></div>';
             errorDiv.firstElementChild.textContent = message;
           }
         </script>
