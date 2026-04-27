@@ -34,25 +34,37 @@ async function handleRequest(request) {
 }
 
 async function serveFrontend() {
+  const logoPath = "M804.571429 530.285714l0-274.285714q0-14.848-10.825143-25.746286t-25.746286-10.825143l-274.285714 0q-23.990857 0-33.718857 22.308571-9.728 23.405714 7.972571 40.009143l82.285714 82.285714-305.152 305.152q-10.825143 10.825143-10.825143 25.746286t10.825143 25.746286l58.294857 58.294857q10.825143 10.825143 25.746286 10.825143t25.746286-10.825143l305.152-305.152 82.285714 82.285714q10.313143 10.825143 25.746286 10.825143 6.875429 0 14.262857-2.852571 22.308571-9.728 22.308571-33.718857zM950.857143 237.714286l0 548.571429q0 68.022857-48.274286 116.297143t-116.297143 48.274286l-548.571429 0q-68.022857 0-116.297143-48.274286t-48.274286-116.297143l0-548.571429q0-68.022857 48.274286-116.297143t116.297143-48.274286l548.571429 0q68.022857 0 116.297143 48.274286t48.274286 116.297143z";
+  const logoFavicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path d="${logoPath}" fill="#2c2c2c"></path></svg>`;
+  const logoMark = `<svg class="h-10 w-10 shrink-0" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="${logoPath}" fill="#2c2c2c"></path></svg>`;
+  const logoDataURI = `data:image/svg+xml;utf8,${encodeURIComponent(logoFavicon)}`;
   const frontendHTML = `<!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U链接</title>
+    <title>U短链</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
+    <link rel="icon" href="${logoDataURI}">
 </head>
 <body class="min-h-screen bg-gray-50 text-gray-900">
     <main class="mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-4 py-6 sm:px-5 sm:py-8 lg:px-8">
-        <div class="mx-auto mb-4 w-full max-w-2xl">
-            <div class="flex items-center justify-between gap-3">
-                <h1 class="text-3xl font-semibold tracking-tight text-black sm:text-4xl">U短链</h1>
+        <div class="mx-auto mb-4 w-full max-w-xl">
+            <div class="flex items-end justify-between gap-3">
+                <div class="min-w-0 max-w-xl">
+                    <div class="flex items-center gap-3">
+                        ${logoMark}
+                        <h1 class="text-3xl font-semibold tracking-tight text-black sm:text-4xl">U短链</h1>
+                    </div>
+                    <p class="mt-2 text-sm leading-6 text-gray-600 sm:text-base">
+                        更轻、更快、更简单，把长链接整理成干净好用的分享入口。
+                    </p>
+                </div>
                 <a href="https://github.com/hikidd/CloudflareWorker-KV-UrlShort"
                    target="_blank"
                    rel="noreferrer"
                    aria-label="GitHub"
-                   class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-gray-300 bg-white text-gray-700 transition hover:bg-gray-100">
+                   class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-gray-300 bg-white text-gray-700 transition hover:bg-gray-100">
                     <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
                     </svg>
@@ -60,8 +72,8 @@ async function serveFrontend() {
             </div>
         </div>
 
-        <div class="mx-auto w-full max-w-2xl">
-            <section class="rounded-xl border border-gray-200 bg-white p-5 shadow-sm sm:p-6">
+        <div class="mx-auto w-full max-w-xl">
+            <section class="rounded-xl border border-gray-200 bg-white px-5 pt-5 pb-3 shadow-sm sm:px-6 sm:pt-6 sm:pb-4">
                 <form id="shorten-form" class="space-y-4">
                     <div>
                         <label for="url" class="mb-2 block text-sm font-medium text-gray-700">
@@ -94,15 +106,22 @@ async function serveFrontend() {
                                         有效期
                                         <span class="font-normal text-gray-400">（可选）</span>
                                     </label>
-                                    <select id="expiry"
-                                        class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200">
-                                        <option value="">永久有效</option>
-                                        <option value="1h">1小时</option>
-                                        <option value="24h">24小时</option>
-                                        <option value="7d">7天</option>
-                                        <option value="30d">30天</option>
-                                        <option value="custom">自定义时间</option>
-                                    </select>
+                                    <div class="relative">
+                                        <select id="expiry"
+                                            class="w-full appearance-none rounded-lg border border-gray-300 bg-white px-3 pr-10 py-2.5 text-sm text-gray-900 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                                            <option value="">永久有效</option>
+                                            <option value="1h">1小时</option>
+                                            <option value="24h">24小时</option>
+                                            <option value="7d">7天</option>
+                                            <option value="30d">30天</option>
+                                            <option value="custom">自定义时间</option>
+                                        </select>
+                                        <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-400">
+                                            <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
                                     <input id="customExpiry" type="datetime-local"
                                         class="mt-2 hidden w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 transition focus:border-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-200">
                                 </div>
@@ -135,6 +154,7 @@ async function serveFrontend() {
                         class="w-full rounded-lg bg-gray-900 px-3 py-2.5 text-sm font-medium text-white transition hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
                         生成短链接
                     </button>
+                    <p class="mt-2 text-center text-xs text-gray-400">version 1.0.0</p>
                 </form>
 
                 <div id="result" class="mt-4"></div>

@@ -1,6 +1,6 @@
-# 简约短链接生成器
+# U短链
 
-一个基于 Cloudflare Workers 和 KV 存储的短链接生成服务。
+一个基于 Cloudflare Workers 和 KV 存储的极简短链接生成服务，首页默认聚焦 URL 输入，可选配置统一收纳在高级设置中。
 因为[Cloudflare](https://www.cloudflare.com)的免费套餐有限制，所以不提供预览地址，请自行前往[cloudflare Work](https://dash.cloudflare.com)部署。  
 正常来说免费套餐私人使用是完全够的，如有大量需求可付费升级套餐。
 
@@ -11,6 +11,7 @@
 - ⏰ 支持链接有效期设置
 - 🔢 支持访问次数限制
 - 🎨 黑白极简风格界面
+- ⚙️ 高级设置折叠收纳可选配置
 - ✨ 支持自定义短链接
 
 ## 部署步骤
@@ -32,13 +33,13 @@
 
 ## 预览图
 
-![image](https://github.com/user-attachments/assets/25d3c304-3b25-485a-b158-29d795439cbd)
+![homepage preview](./preview-home.png)
 
 ## 使用说明
 
 1. 访问你的 Worker URL (例如: `https://url-shortener.你的用户名.workers.dev`)
 2. 输入需要缩短的链接
-3. (可选) 设置:
+3. 如需更多配置，点击“高级设置”后可选填写:
    - 自定义短链接
    - 有效期
    - 访问密码
