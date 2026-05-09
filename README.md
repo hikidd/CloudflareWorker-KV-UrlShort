@@ -1,4 +1,4 @@
-# U短链
+# X短链
 
 一个基于 Cloudflare Workers 和 KV 存储的极简短链接生成服务，首页默认聚焦 URL 输入，可选配置统一收纳在高级设置中。
 因为[Cloudflare](https://www.cloudflare.com)的免费套餐有限制，所以不提供预览地址，请自行前往[cloudflare Work](https://dash.cloudflare.com)部署。  

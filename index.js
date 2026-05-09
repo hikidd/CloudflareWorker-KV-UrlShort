@@ -43,7 +43,7 @@ async function serveFrontend() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U短链</title>
+    <title>X短链</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" href="${logoDataURI}">
 </head>
@@ -54,7 +54,7 @@ async function serveFrontend() {
                 <div class="min-w-0 max-w-xl">
                     <div class="flex items-center gap-3">
                         ${logoMark}
-                        <h1 class="text-3xl font-semibold tracking-tight text-black sm:text-4xl">U短链</h1>
+                        <h1 class="text-3xl font-semibold tracking-tight text-black sm:text-4xl">X短链</h1>
                     </div>
                     <p class="mt-2 text-sm leading-6 text-gray-600 sm:text-base">
                         更轻、更快、更简单，把长链接整理成干净好用的分享入口。
